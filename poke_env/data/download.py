@@ -113,6 +113,9 @@ def download_teams(
     """
     if METAMON_CACHE_DIR is None:
         raise ValueError("METAMON_CACHE_DIR environment variable is not set")
+    
+    if set_name == "custom":
+        return os.path.join(os.path.dirname(__file__), "..", "custom_teams", battle_format)
 
     teams_dir = os.path.join(METAMON_CACHE_DIR, "teams", set_name)
     tar_path = os.path.join(teams_dir, f"{battle_format}.tar.gz")

@@ -97,7 +97,7 @@ async def main():
                             battle_format=args.battle_format)
 
     # Use old teamloader for player, modern for opponent
-    player_teamloader = get_metamon_teams(args.battle_format, "competitive")
+    player_teamloader = get_metamon_teams(args.battle_format, "custom")
     opponent_teamloader = get_metamon_teams(args.battle_format, "modern_replays")
     
     if not 'random' in args.battle_format:

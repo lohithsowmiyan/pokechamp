@@ -44,7 +44,7 @@ from poke_env.player.local_simulation import LocalSim, SimNode
 from difflib import get_close_matches
 from pokechamp.prompts import get_number_turns_faint, get_status_num_turns_fnt, state_translate, get_gimmick_motivation
 
-DEBUG=False
+DEBUG=True
 
 class LLMPlayer(Player):
     def __init__(self,

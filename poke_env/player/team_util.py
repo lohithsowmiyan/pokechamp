@@ -65,9 +65,10 @@ def get_metamon_teams(battle_format: str, set_name: str) -> TeamSet:
         "paper_variety",
         "modern_replays",
         "pokeagent_modern_replays",
+        "custom"
     }:
         raise ValueError(
-            f"Invalid set name: {set_name}. Must be one of: competitive, paper_replays, paper_variety, modern_replays"
+            f"Invalid set name: {set_name}. Must be one of: competitive, paper_replays, paper_variety, modern_replays, custom"
         )
     path = download_teams(battle_format, set_name=set_name)
     if not os.path.exists(path):
