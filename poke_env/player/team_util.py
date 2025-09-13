@@ -29,15 +29,17 @@ class TeamSet(Teambuilder):
     def __init__(self, team_file_dir: str, battle_format: str):
         super().__init__()
         self.team_file_dir = team_file_dir
+        #print("team_file dir:",team_file_dir)
         self.battle_format = battle_format
         self.team_files = self._find_team_files()
+        #print("team_files",self.team_files)
 
     def _find_team_files(self):
         team_files = []
         for root, _, files in os.walk(self.team_file_dir):
             for file in files:
-                if file.endswith(f".{self.battle_format}_team"):
-                    team_files.append(os.path.join(root, file))
+                #if file.endswith(f".{self.battle_format}_team"):
+                team_files.append(os.path.join(root, file))
         return team_files
 
     def yield_team(self):
